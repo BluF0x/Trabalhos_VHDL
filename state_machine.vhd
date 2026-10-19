@@ -1,8 +1,9 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Controle do cronometro. Os contadores continuam em modulos separados.
--- ck1seg e um pulso de um ciclo do clock da placa, nao um segundo clock.
+-- Controla a carga, a contagem e a parada do cronometro.
+-- Os contadores de minutos e segundos estao em outros modulos.
+-- ck1seg indica quando passou um segundo, mas nao e outro clock.
 entity state_machine is
     port (
         clock, reset, carga, conta : in STD_LOGIC;
@@ -11,7 +12,7 @@ entity state_machine is
     );
 end state_machine;
 
-architecture Behavioral of state_machine is
+architecture state_machine of state_machine is
     type states is (IDLE, LOAD, COUNT);
     signal pst, nst : states := IDLE;
     signal terminou : STD_LOGIC := '0';
@@ -19,8 +20,9 @@ architecture Behavioral of state_machine is
 begin
     zerado <= min_zero and seg_zero;
 
-    -- Estado atual e memoria do LED. IDLE apos reset e IDLE apos o
-    -- termino precisam de valores diferentes para parado.
+    -- Guarda o estado atual e registra quando a contagem terminou.
+    -- Assim, IDLE apos o reset e IDLE apos chegar a zero podem
+    -- apresentar valores diferentes na saida parado.
     process(clock, reset)
     begin
         if reset = '1' then
@@ -36,7 +38,7 @@ begin
         end if;
     end process;
 
-    -- Proximo estado, seguindo o diagrama do enunciado.
+    -- Escolhe o proximo estado a partir do estado atual e das entradas.
     process(pst, carga, conta, zerado)
     begin
         nst <= pst;
@@ -56,12 +58,13 @@ begin
         end case;
     end process;
 
-    -- Uma carga ao sair de IDLE; em COUNT, segundos decrementam
-    -- a cada pulso, e minutos decrementam quando segundos eram zero.
+    -- Gera os sinais de controle para os outros modulos.
+    -- A cada ck1seg, decrementa os segundos. Se os segundos ja
+    -- estiverem em zero, decrementa tambem os minutos.
     carregar <= '1' when pst = IDLE and carga = '1' and reset = '0' else '0';
     rodando <= '1' when pst = COUNT and zerado = '0' else '0';
     ce_seg <= '1' when pst = COUNT and zerado = '0' and ck1seg = '1' else '0';
     ce_min <= '1' when pst = COUNT and zerado = '0' and
                        seg_zero = '1' and ck1seg = '1' else '0';
     parado <= terminou;
-end Behavioral;
+end state_machine;
