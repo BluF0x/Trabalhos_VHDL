@@ -1,0 +1,6 @@
+vhdl work "state_machine.vhd"
+vhdl work "divisor.vhd"
+vhdl work "display_drive.vhd"
+vhdl work "contador_desc.vhd"
+vhdl work "cronometro.vhd"
+vhdl work "cronometro_tb.vhd"

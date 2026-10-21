@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/ise/Projeto1/prim_proc_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="prim_proc_tb" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/prim_proc_tb/aa" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">aa</obj_property>
+      <obj_property name="ObjectShortName">aa</obj_property>
+   </wvobject>
+   <wvobject fp_name="/prim_proc_tb/ab" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ab</obj_property>
+      <obj_property name="ObjectShortName">ab</obj_property>
+   </wvobject>
+   <wvobject fp_name="/prim_proc_tb/ba" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ba</obj_property>
+      <obj_property name="ObjectShortName">ba</obj_property>
+   </wvobject>
+   <wvobject fp_name="/prim_proc_tb/bb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bb</obj_property>
+      <obj_property name="ObjectShortName">bb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/prim_proc_tb/ctrl_tb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ctrl_tb[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl_tb[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/prim_proc_tb/sai_tb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sai_tb</obj_property>
+      <obj_property name="ObjectShortName">sai_tb</obj_property>
+   </wvobject>
+</wave_config>

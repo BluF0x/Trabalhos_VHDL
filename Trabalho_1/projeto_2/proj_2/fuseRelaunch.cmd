@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/ise/VHDL/Trabalho_1/projeto_2/proj_2/one_hot_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalho_1/projeto_2/proj_2/one_hot_tb_beh.prj" "work.one_hot_tb" 

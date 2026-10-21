@@ -1,0 +1,3 @@
+vhdl isim_temp "one_hot_og.vhd"
+vhdl isim_temp "n_bit_one_hot.vhd"
+vhdl isim_temp "one_hot_tb.vhd"

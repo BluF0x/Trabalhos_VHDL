@@ -1,0 +1,6 @@
+vhdl isim_temp "state_machine.vhd"
+vhdl isim_temp "divisor.vhd"
+vhdl isim_temp "display_drive.vhd"
+vhdl isim_temp "contador_desc.vhd"
+vhdl isim_temp "cronometro.vhd"
+vhdl isim_temp "cronometro_tb.vhd"

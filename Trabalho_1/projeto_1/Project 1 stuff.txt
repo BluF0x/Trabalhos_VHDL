@@ -1,0 +1,6 @@
+Project 1 stuff
+
+O hardware descreve um multiplexador de 4 inputs para 1 output.
+
+
+O mesmo testbench foi usado para cada caso

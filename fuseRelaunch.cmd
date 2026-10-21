@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/VHDL/Trabalho_2/contador_desc_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalho_2/contador_desc_tb_beh.prj" "work.contador_desc_tb" 

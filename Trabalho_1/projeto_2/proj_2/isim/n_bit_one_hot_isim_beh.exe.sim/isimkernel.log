@@ -1,0 +1,28 @@
+Command line:
+   n_bit_one_hot_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  44001
+
+Wed Sep 30 10:00:17 2026
+
+
+ Elaboration Time: 0.09 sec
+
+ Current Memory Usage: 205.23 Meg
+
+ Total Signals          : 2
+ Total Nets             : 11
+ Total Signal Drivers   : 16
+ Total Blocks           : 11
+ Total Primitive Blocks : 10
+ Total Processes        : 16
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 503
+
+ Total Simulation Time: 0.1 sec
+
+ Current Memory Usage: 282.829 Meg
+
+Wed Sep 30 10:00:21 2026
+

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/ise/VHDL/Trabalho_1/projeto_4/proj_4/transmissor_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalho_1/projeto_4/proj_4/transmissor_tb_beh.prj" "work.transmissor_tb" 

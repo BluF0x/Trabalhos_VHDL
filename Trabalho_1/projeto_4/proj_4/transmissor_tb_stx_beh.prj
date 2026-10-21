@@ -1,0 +1,2 @@
+vhdl isim_temp "transmissor.vhd"
+vhdl isim_temp "transmissor_tb.vhd"

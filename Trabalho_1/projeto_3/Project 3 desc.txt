@@ -1,0 +1,41 @@
+Project 3 desc
+
+como o nome da entidade indica, é um contador de modulo 17, contando de 0 a 16, com reset sincrono.
+
+O mesmo testbench foi usado para cada caso
+
+
+descrição de linha:
+
+
+library IEEE; 			declaração de bilbioteca
+use IEEE.STD_LOGIC_1164.ALL; 	declaração de qual funcção da biblioteca esta sendo usada: tudo em Standard logic 1164
+use IEEE.NUMERIC_STD.ALL;	declaração de qual funcção da biblioteca esta sendo usada: tudo em Numeric standard
+
+entity m17_counter is				Declaração do nome
+port (clk, reset : in STD_LOGIC;		Declaração de inputs: Clock e Reset em 1 bit Standard logic
+count : out STD_LOGIC_VECTOR (4 downto 0));	Declaração de output counter em standard logic vector 5 bits
+end m17_counter;				fim da declaração
+
+architecture m17_counter of m17_counter is			Definição de funcionalidade.
+signal int_count : unsigned(4 downto 0) := (others => '0');	Definição dos "fios" internos: Integer counter como unsigned 5 bit vector, iniciado em '00000'
+
+begin				Declaração de inicio do comportamento.
+
+	process(clk)							Declaração de um processo sequencial com sensitividade a porta Clock
+	begin								Declaração de inicio do comportamento.
+		if rising_edge(clk) then				condicional "Se" monitorando a subida de borda de onda clock
+			if reset = '1' then				condicional "se" ao "se" anterior, se reset for 1
+				int_count <= (others => '0');		zera todos os bits do integer counter
+			else						condição alternativa a  (If reset = 1)
+				if int_count = 16 then			condicional se monitorando quando integer counter = 16 ou '10000'
+					int_count <= (others => '0');	zera todos os bits do integer counter
+				else					condicional alternativo para (if int_count =16)
+					int_count <= int_count + 1;	adiciona o valor numerico 1 no integer counter
+				end if;					finalizaçao do condicional "se" (int_count =16)
+			end if;						finalização do condicional "se" (reset =1)
+		end if;							finalização do condicional "se" (rising_edge(clk))
+	end process;							finalização do processo sequencial com sensitividade a porta clock.
+
+	count <= std_logic_vector(int_count);		saida counter recebe o vetor de integer counter
+end m17_counter						finalização da funcionalide.
