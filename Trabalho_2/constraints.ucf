@@ -1,0 +1,37 @@
+# Clock
+NET "clock" LOC = B8;
+
+# LED
+NET "parado" LOC = J14;
+
+# Botões
+NET "reset" LOC = B18;
+NET "conta" LOC = E18;
+NET "carga" LOC = H13;
+
+# Alavancas
+NET "chave[0]" LOC = G18;
+NET "chave[1]" LOC = H18;
+NET "chave[2]" LOC = K18;
+NET "chave[3]" LOC = K17;
+NET "chave[4]" LOC = L14;
+NET "chave[5]" LOC = L13;
+NET "chave[6]" LOC = N17;
+
+# Display
+
+# Enable
+NET "an[3]" LOC = F15;                                            
+NET "an[2]" LOC = C18;
+NET "an[1]" LOC = H17;
+NET "an[0]" LOC = F17;
+
+# Segamentos
+NET "dec_ddp[7]" LOC = L18;
+NET "dec_ddp[6]" LOC = F18;
+NET "dec_ddp[5]" LOC = D17;
+NET "dec_ddp[4]" LOC = D16;
+NET "dec_ddp[3]" LOC = G14;
+NET "dec_ddp[2]" LOC = J17;
+NET "dec_ddp[1]" LOC = H14;
+NET "dec_ddp[0]" LOC = C17;

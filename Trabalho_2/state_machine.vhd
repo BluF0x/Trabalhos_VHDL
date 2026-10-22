@@ -56,5 +56,5 @@ begin
     pst <= "00" when present = IDLE else
            "01" when present = LOAD else
            "10";
-    parado <= terminou;
+    parado <= '1' when terminou = '1' else '0';
 end state_machine;

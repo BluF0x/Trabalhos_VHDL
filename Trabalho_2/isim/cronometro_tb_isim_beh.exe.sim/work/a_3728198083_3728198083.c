@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/VHDL/Trabalho_2/cronometro_tb.vhd";
+static const char *ng0 = "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_374109322130769762_503743352(char *, unsigned char );
@@ -219,7 +219,7 @@ static void work_a_3728198083_3728198083_p_4(char *t0)
 
 LAB0:    xsi_set_current_line(17, ng0);
 
-LAB3:    t1 = (t0 + 6684);
+LAB3:    t1 = (t0 + 6892);
     t3 = (t0 + 4632);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);

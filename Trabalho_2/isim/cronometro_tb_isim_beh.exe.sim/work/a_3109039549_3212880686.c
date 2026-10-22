@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/VHDL/Trabalho_2/contador_desc.vhd";
+static const char *ng0 = "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd";
 extern char *IEEE_P_1242562249;
 
 char *ieee_p_1242562249_sub_10420449594411817395_1035706684(char *, char *, int , int );
@@ -127,7 +127,7 @@ LAB2:    xsi_set_current_line(49, ng0);
 LAB5:    xsi_set_current_line(51, ng0);
     t1 = (t0 + 1032U);
     t5 = *((char **)t1);
-    t1 = (t0 + 5856U);
+    t1 = (t0 + 6040U);
     t9 = ieee_p_1242562249_sub_17802405650254020620_1035706684(IEEE_P_1242562249, t5, t1);
     t10 = (t9 <= 59);
     if (t10 != 0)
@@ -139,7 +139,7 @@ LAB8:    goto LAB3;
 LAB7:    xsi_set_current_line(52, ng0);
     t6 = (t0 + 1032U);
     t7 = *((char **)t6);
-    t6 = (t0 + 5856U);
+    t6 = (t0 + 6040U);
     t11 = ieee_p_1242562249_sub_17802405650254020620_1035706684(IEEE_P_1242562249, t7, t6);
     t8 = (t0 + 3992);
     t12 = (t8 + 56U);

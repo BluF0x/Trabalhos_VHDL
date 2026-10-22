@@ -1,0 +1,10 @@
+AR contador_desc behavioral /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd sub00/vhpl05 1792686940
+AR cronometro behavioral /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd sub00/vhpl09 1792686944
+EN divisor NULL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd sub00/vhpl00 1792686935
+AR divisor behavioral /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd sub00/vhpl01 1792686936
+EN cronometro NULL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd sub00/vhpl08 1792686943
+AR dspl_drv dspl_drv /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/display_drive.vhd sub00/vhpl07 1792686942
+EN dspl_drv NULL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/display_drive.vhd sub00/vhpl06 1792686941
+EN contador_desc NULL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd sub00/vhpl04 1792686939
+EN state_machine NULL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd sub00/vhpl02 1792686937
+AR state_machine state_machine /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd sub00/vhpl03 1792686938

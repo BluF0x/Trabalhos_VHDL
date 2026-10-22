@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/VHDL/Trabalho_2/cronometro_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalho_2/cronometro_tb_beh.prj" "work.cronometro_tb" 
+-intstyle "ise" -incremental -o "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb_beh.prj" "work.cronometro_tb" 

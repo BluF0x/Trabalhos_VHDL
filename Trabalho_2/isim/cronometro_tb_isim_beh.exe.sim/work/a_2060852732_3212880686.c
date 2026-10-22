@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/VHDL/Trabalho_2/divisor.vhd";
+static const char *ng0 = "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd";
 
 
 

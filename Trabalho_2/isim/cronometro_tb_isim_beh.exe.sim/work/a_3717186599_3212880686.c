@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/VHDL/Trabalho_2/cronometro.vhd";
+static const char *ng0 = "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd";
 extern char *IEEE_P_1242562249;
 extern char *IEEE_P_2592010699;
 
@@ -59,10 +59,10 @@ static void work_a_3717186599_3212880686_p_0(char *t0)
     char *t29;
     char *t30;
 
-LAB0:    xsi_set_current_line(100, ng0);
+LAB0:    xsi_set_current_line(101, ng0);
     t1 = (t0 + 3752U);
     t2 = *((char **)t1);
-    t1 = (t0 + 15575);
+    t1 = (t0 + 16039);
     t4 = 1;
     if (2U == 2U)
         goto LAB5;
@@ -74,7 +74,7 @@ LAB7:    if (t4 != 0)
 
 LAB4:    t13 = (t0 + 3752U);
     t14 = *((char **)t13);
-    t13 = (t0 + 15577);
+    t13 = (t0 + 16041);
     t16 = 1;
     if (2U == 2U)
         goto LAB13;
@@ -173,10 +173,10 @@ static void work_a_3717186599_3212880686_p_1(char *t0)
     char *t21;
     char *t22;
 
-LAB0:    xsi_set_current_line(104, ng0);
+LAB0:    xsi_set_current_line(105, ng0);
     t2 = (t0 + 3272U);
     t3 = *((char **)t2);
-    t2 = (t0 + 15579);
+    t2 = (t0 + 16043);
     t5 = 1;
     if (8U == 8U)
         goto LAB8;
@@ -256,7 +256,7 @@ static void work_a_3717186599_3212880686_p_2(char *t0)
     char *t13;
     char *t14;
 
-LAB0:    xsi_set_current_line(105, ng0);
+LAB0:    xsi_set_current_line(106, ng0);
     t1 = (t0 + 4072U);
     t2 = *((char **)t1);
     t3 = *((unsigned char *)t2);
@@ -310,10 +310,10 @@ static void work_a_3717186599_3212880686_p_3(char *t0)
     char *t17;
     char *t18;
 
-LAB0:    xsi_set_current_line(106, ng0);
+LAB0:    xsi_set_current_line(107, ng0);
     t1 = (t0 + 3112U);
     t2 = *((char **)t1);
-    t1 = (t0 + 15587);
+    t1 = (t0 + 16051);
     t4 = 1;
     if (8U == 8U)
         goto LAB5;
@@ -384,10 +384,10 @@ static void work_a_3717186599_3212880686_p_4(char *t0)
     char *t17;
     char *t18;
 
-LAB0:    xsi_set_current_line(107, ng0);
+LAB0:    xsi_set_current_line(108, ng0);
     t1 = (t0 + 3272U);
     t2 = *((char **)t1);
-    t1 = (t0 + 15595);
+    t1 = (t0 + 16059);
     t4 = 1;
     if (8U == 8U)
         goto LAB5;
@@ -456,13 +456,13 @@ static void work_a_3717186599_3212880686_p_5(char *t0)
     char *t14;
     char *t15;
 
-LAB0:    xsi_set_current_line(110, ng0);
+LAB0:    xsi_set_current_line(111, ng0);
 
 LAB3:    t1 = (t0 + 5288U);
     t2 = *((char **)t1);
     t1 = (t0 + 3272U);
     t3 = *((char **)t1);
-    t1 = (t0 + 14520U);
+    t1 = (t0 + 15032U);
     t4 = ieee_p_1242562249_sub_17802405650254020620_1035706684(IEEE_P_1242562249, t3, t1);
     t5 = (t4 - 0);
     t6 = (t5 * 1);
@@ -504,13 +504,13 @@ static void work_a_3717186599_3212880686_p_6(char *t0)
     char *t14;
     char *t15;
 
-LAB0:    xsi_set_current_line(111, ng0);
+LAB0:    xsi_set_current_line(112, ng0);
 
 LAB3:    t1 = (t0 + 5288U);
     t2 = *((char **)t1);
     t1 = (t0 + 3112U);
     t3 = *((char **)t1);
-    t1 = (t0 + 14520U);
+    t1 = (t0 + 15032U);
     t4 = ieee_p_1242562249_sub_17802405650254020620_1035706684(IEEE_P_1242562249, t3, t1);
     t5 = (t4 - 0);
     t6 = (t5 * 1);
@@ -560,7 +560,7 @@ static void work_a_3717186599_3212880686_p_7(char *t0)
     char *t22;
     char *t23;
 
-LAB0:    xsi_set_current_line(117, ng0);
+LAB0:    xsi_set_current_line(114, ng0);
 
 LAB3:    t1 = (t0 + 3592U);
     t2 = *((char **)t1);
@@ -635,7 +635,7 @@ static void work_a_3717186599_3212880686_p_8(char *t0)
     char *t22;
     char *t23;
 
-LAB0:    xsi_set_current_line(118, ng0);
+LAB0:    xsi_set_current_line(115, ng0);
 
 LAB3:    t1 = (t0 + 3592U);
     t2 = *((char **)t1);
@@ -710,7 +710,7 @@ static void work_a_3717186599_3212880686_p_9(char *t0)
     char *t22;
     char *t23;
 
-LAB0:    xsi_set_current_line(119, ng0);
+LAB0:    xsi_set_current_line(116, ng0);
 
 LAB3:    t1 = (t0 + 3432U);
     t2 = *((char **)t1);
@@ -785,7 +785,7 @@ static void work_a_3717186599_3212880686_p_10(char *t0)
     char *t22;
     char *t23;
 
-LAB0:    xsi_set_current_line(120, ng0);
+LAB0:    xsi_set_current_line(117, ng0);
 
 LAB3:    t1 = (t0 + 3432U);
     t2 = *((char **)t1);

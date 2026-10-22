@@ -38,7 +38,7 @@ entity contador_desc is
 	);
 end contador_desc;
 
-architecture Behavioral of contador_desc is
+                                                                                                                                                                                                                                                                 architecture Behavioral of contador_desc is
 	signal counter : integer := 0;
 begin
 	

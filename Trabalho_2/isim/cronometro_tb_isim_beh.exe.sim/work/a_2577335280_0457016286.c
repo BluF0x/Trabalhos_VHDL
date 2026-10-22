@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/VHDL/Trabalho_2/state_machine.vhd";
+static const char *ng0 = "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_2763492388968962707_503743352(char *, char *, unsigned int , unsigned int );
@@ -339,7 +339,7 @@ LAB4:    t11 = (t0 + 2312U);
         goto LAB5;
 
 LAB6:
-LAB7:    t21 = (t0 + 8110);
+LAB7:    t21 = (t0 + 8398);
     t23 = (t0 + 5656);
     t24 = (t23 + 56U);
     t25 = *((char **)t24);
@@ -352,7 +352,7 @@ LAB2:    t28 = (t0 + 5304);
     *((int *)t28) = 1;
 
 LAB1:    return;
-LAB3:    t1 = (t0 + 8106);
+LAB3:    t1 = (t0 + 8394);
     t6 = (t0 + 5656);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -362,7 +362,7 @@ LAB3:    t1 = (t0 + 8106);
     xsi_driver_first_trans_fast_port(t6);
     goto LAB2;
 
-LAB5:    t11 = (t0 + 8108);
+LAB5:    t11 = (t0 + 8396);
     t16 = (t0 + 5656);
     t17 = (t16 + 56U);
     t18 = *((char **)t17);

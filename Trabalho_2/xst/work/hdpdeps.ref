@@ -1,0 +1,36 @@
+V3 20
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd 2026/10/22.16:28:30 P.20131013
+EN work/contador_desc 1792686939 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/contador_desc/Behavioral 1792686940 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd \
+      EN work/contador_desc 1792686939
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd 2026/10/22.16:34:12 P.20131013
+EN work/cronometro 1792686943 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/cronometro/Behavioral 1792686944 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd \
+      EN work/cronometro 1792686943 CP work/divisor CP work/state_machine \
+      CP work/contador_desc CP work/dspl_drv
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/display_drive.vhd 2026/10/22.13:19:53 P.20131013
+EN work/dspl_drv 1792686941 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/display_drive.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/dspl_drv/dspl_drv 1792686942 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/display_drive.vhd \
+      EN work/dspl_drv 1792686941 CP with
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd 2026/10/22.13:19:53 P.20131013
+EN work/divisor 1792686935 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/divisor/Behavioral 1792686936 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd EN work/divisor 1792686935
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd 2026/10/22.15:13:05 P.20131013
+EN work/state_machine 1792686937 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/state_machine/state_machine 1792686938 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd \
+      EN work/state_machine 1792686937

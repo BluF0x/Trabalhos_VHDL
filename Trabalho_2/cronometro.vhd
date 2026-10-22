@@ -8,7 +8,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 entity cronometro is
-	GENERIC (CLOCK_FREQ : integer := 25_000_000);
+	GENERIC (CLOCK_FREQ : integer := 50_000_000);
 	port ( carga, conta, reset, clock : in std_logic;
 			chave : in std_logic_vector(6 downto 0);
 			parado : out std_logic;
@@ -26,6 +26,7 @@ architecture Behavioral of cronometro is
 	signal segundos_bcd, minutos_bcd : std_logic_vector(7 downto 0);
 	signal state_out : std_logic_vector(1 downto 0 );
 	signal nsp, pst : STATES;
+	signal td3, td2, td1, td0 : std_logic_vector(5 downto 0);
 	
 	type ROM is array (0 to 99) of std_logic_vector (7 downto 0);
 		constant conv_to_BCD : ROM:=(
@@ -63,7 +64,7 @@ begin
 
 	state_machine: entity work.state_machine
 		port map (
-			clock => clock,
+			clock => clk1seg,
 			reset => reset,
 			carga => carga,
 			conta => conta,
@@ -77,7 +78,7 @@ begin
 		generic map (MAX_VALUE => 59)
 		port map(
 			carga_ext => (others => '0'),
-			clk => clock,
+			clk => clk1seg,
 			reset => reset,
 			enable => ce_seg,
 			carga => carga,
@@ -88,7 +89,7 @@ begin
 		generic map (MAX_VALUE => 99)
 		port map(
 			carga_ext => chave,
-			clk => clock,
+			clk => clk1seg,
 			reset => reset,
 			enable => ce_min,
 			carga => carga,
@@ -104,20 +105,28 @@ begin
 	ce_min <= '1' when segundos = "00000000" and pst = COUNT else '0';
 	ce_seg <= '1' when pst = COUNT else '0';
 	min_zero <= '1' when minutos = "00000000" else '0';
-	seg_zero <= '1' when segundos = "00000000" else '0';
+	seg_zero <= '1' when segundos = "00000001" else '0'; --No proximo clock muda o estado, então é necessario ativar no 1 s, senão ele volta ao num maximo
 
 	-- Conversão de binario
 	segundos_bcd <= conv_to_BCD(to_integer(unsigned(segundos)));
 	minutos_bcd <= conv_to_BCD(to_integer(unsigned(minutos)));
+	
+	td3 <= '1' & minutos_bcd(7 downto 4) & '1';
+	td2 <= '1' & minutos_bcd(3 downto 0) & '0';
+	td1 <= '1' & segundos_bcd(7 downto 4) & '1';
+	td0 <= '1' & segundos_bcd(3 downto 0) & '1';
+	
+
+	
 
 	display_driver: entity work.dspl_drv
 	port map(
 		clock => clock,
 		reset => reset,
-		d3 => '1' & minutos_bcd(7 downto 4) & '0',
-		d2 => '1' & minutos_bcd(3 downto 0) & '1',
-		d1 => '1' & segundos_bcd(7 downto 4) & '0',
-		d0 => '1' & segundos_bcd(3 downto 0) & '0',
+		d3 => td3,
+		d2 => td2,
+		d1 => td1,
+		d0 => td0,
 		an => an,
 		dec_ddp => dec_ddp		
 	);

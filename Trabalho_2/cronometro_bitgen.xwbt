@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.ncd
+OUTFILE=/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-5fg320
+WORKINGDIR=/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2
+LICENSE=WebPack
+USER_INFO=212154329_0_0_159

@@ -1,22 +1,18 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/VHDL/Trabalho_2/cronometro_tb_isim_beh.exe -prj /home/ise/VHDL/Trabalho_2/cronometro_tb_beh.prj work.cronometro_tb 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb_isim_beh.exe -prj /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb_beh.prj work.cronometro_tb 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/VHDL/Trabalho_2/state_machine.vhd" into library work
-Parsing VHDL file "/home/ise/VHDL/Trabalho_2/divisor.vhd" into library work
-Parsing VHDL file "/home/ise/VHDL/Trabalho_2/display_drive.vhd" into library work
-Parsing VHDL file "/home/ise/VHDL/Trabalho_2/contador_desc.vhd" into library work
-Parsing VHDL file "/home/ise/VHDL/Trabalho_2/cronometro.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/VHDL/Trabalho_2/cronometro.vhd" Line 117: Actual for formal port d3 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/VHDL/Trabalho_2/cronometro.vhd" Line 118: Actual for formal port d2 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/VHDL/Trabalho_2/cronometro.vhd" Line 119: Actual for formal port d1 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/VHDL/Trabalho_2/cronometro.vhd" Line 120: Actual for formal port d0 is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/VHDL/Trabalho_2/cronometro_tb.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/display_drive.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/contador_desc.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 98476 KB
-Fuse CPU Usage: 9090 ms
+Fuse Memory Usage: 98468 KB
+Fuse CPU Usage: 790 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -31,7 +27,7 @@ Compiling architecture behavioral of entity cronometro [\cronometro(4)\]
 Compiling architecture cronometro_tb of entity cronometro_tb
 Time Resolution for simulation is 1ps.
 Compiled 18 VHDL Units
-Built simulation executable /home/ise/VHDL/Trabalho_2/cronometro_tb_isim_beh.exe
-Fuse Memory Usage: 117344 KB
-Fuse CPU Usage: 11340 ms
-GCC CPU Usage: 14240 ms
+Built simulation executable /home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro_tb_isim_beh.exe
+Fuse Memory Usage: 117352 KB
+Fuse CPU Usage: 1210 ms
+GCC CPU Usage: 840 ms
