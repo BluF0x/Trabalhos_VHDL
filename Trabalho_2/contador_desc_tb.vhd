@@ -40,7 +40,7 @@ ARCHITECTURE behavior OF contador_desc_tb IS
 	constant MAX_VALUE : integer := 10;
 	signal carga_ext : std_logic_vector(6 downto 0) := (others => '0');
 	signal clk, reset, enable, carga : std_logic := '0';
-	signal output : std_logic_vector(7 downto 0) := (others => '0');
+	signal count_out : std_logic_vector(7 downto 0) := (others => '0');
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
@@ -52,7 +52,7 @@ BEGIN
           reset => reset,
           enable => enable,
           carga => carga,
-          output => output
+          count_out => count_out
         );
 
 	reset <= '1', '0' after 15 ns;

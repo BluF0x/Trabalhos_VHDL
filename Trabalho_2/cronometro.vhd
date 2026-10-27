@@ -20,7 +20,7 @@ end cronometro;
 architecture Behavioral of cronometro is
 	type STATES is (IDLE, LOAD, COUNT);
 
-	signal clk1seg, ce_seg, ce_min : std_logic;
+	signal clk1seg, ce_seg, ce_min, hab_carga : std_logic;
 	signal min_zero, seg_zero : std_logic;
 	signal minutos, segundos : std_logic_vector(7 downto 0);
 	signal segundos_bcd, minutos_bcd : std_logic_vector(7 downto 0);
@@ -55,7 +55,7 @@ architecture Behavioral of cronometro is
 begin
 
 	divisor_clk: entity work.divisor 
-		generic map (HALF_SEC_CLK_COUNTER => CLOCK_FREQ)
+		generic map (HALF_SEC_CLK_COUNTER => CLOCK_FREQ /2)
 		port map (
 			clock => clock,
 			reset => reset,
@@ -81,7 +81,7 @@ begin
 			clk => clk1seg,
 			reset => reset,
 			enable => ce_seg,
-			carga => carga,
+			carga => hab_carga,
 			count_out => segundos
 		);
 
@@ -92,7 +92,7 @@ begin
 			clk => clk1seg,
 			reset => reset,
 			enable => ce_min,
-			carga => carga,
+			carga => hab_carga,
 			count_out => minutos
 		);
 
@@ -104,6 +104,10 @@ begin
 	-- Habilita contagem
 	ce_min <= '1' when segundos = "00000000" and pst = COUNT else '0';
 	ce_seg <= '1' when pst = COUNT else '0';
+	 -- Se carga é ligada diretamente é possivel carregar um novo valor no estado COUNT e LOAD.
+	 -- Para seguir estritamente a especificação, um numero apenas pode ser carregado no estado IDLE.
+	hab_carga <= '1' when carga = '1' and pst = IDLE else '0';
+	
 	min_zero <= '1' when minutos = "00000000" else '0';
 	seg_zero <= '1' when segundos = "00000001" else '0'; --No proximo clock muda o estado, então é necessario ativar no 1 s, senão ele volta ao num maximo
 

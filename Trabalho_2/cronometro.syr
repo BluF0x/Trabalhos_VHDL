@@ -126,7 +126,7 @@ Analyzing hierarchy for entity <cronometro> in library <work> (architecture <beh
 	CLOCK_FREQ = 50000000
 
 Analyzing hierarchy for entity <divisor> in library <work> (architecture <Behavioral>) with generics.
-	HALF_SEC_CLK_COUNTER = 50000000
+	HALF_SEC_CLK_COUNTER = 25000000
 
 Analyzing hierarchy for entity <state_machine> in library <work> (architecture <state_machine>).
 
@@ -144,12 +144,12 @@ Analyzing hierarchy for entity <dspl_drv> in library <work> (architecture <dspl_
 =========================================================================
 Analyzing generic Entity <cronometro> in library <work> (Architecture <behavioral>).
 	CLOCK_FREQ = 50000000
-WARNING:Xst:790 - "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd" line 111: Index value(s) does not match array range, simulation mismatch.
-WARNING:Xst:790 - "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd" line 112: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd" line 115: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd" line 116: Index value(s) does not match array range, simulation mismatch.
 Entity <cronometro> analyzed. Unit <cronometro> generated.
 
 Analyzing generic Entity <divisor> in library <work> (Architecture <Behavioral>).
-	HALF_SEC_CLK_COUNTER = 50000000
+	HALF_SEC_CLK_COUNTER = 25000000
 Entity <divisor> analyzed. Unit <divisor> generated.
 
 Analyzing Entity <state_machine> in library <work> (Architecture <state_machine>).
@@ -175,8 +175,8 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <divisor>.
     Related source file is "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor.vhd".
-    Found 1-bit register for signal <clk1seg>.
     Found 32-bit up counter for signal <counter>.
+    Found 1-bit register for signal <temp>.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 D-type flip-flop(s).
@@ -247,8 +247,8 @@ Unit <dspl_drv> synthesized.
 Synthesizing Unit <cronometro>.
     Related source file is "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/cronometro.vhd".
 WARNING:Xst:1780 - Signal <nsp> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-    Found 100x8-bit ROM for signal <minutos_bcd$rom0000> created at line 112.
-    Found 100x8-bit ROM for signal <segundos_bcd$rom0000> created at line 111.
+    Found 100x8-bit ROM for signal <minutos_bcd$rom0000> created at line 116.
+    Found 100x8-bit ROM for signal <segundos_bcd$rom0000> created at line 115.
     Using one-hot encoding for signal <pst>.
     Summary:
 	inferred   2 ROM(s).
@@ -373,16 +373,16 @@ Design Statistics
 # IOs                              : 24
 
 Cell Usage :
-# BELS                             : 669
+# BELS                             : 668
 #      GND                         : 1
-#      INV                         : 68
+#      INV                         : 69
 #      LUT1                        : 61
-#      LUT2                        : 78
+#      LUT2                        : 77
 #      LUT2_D                      : 1
 #      LUT2_L                      : 3
 #      LUT3                        : 42
 #      LUT3_D                      : 1
-#      LUT4                        : 109
+#      LUT4                        : 108
 #      LUT4_D                      : 1
 #      LUT4_L                      : 1
 #      MUXCY                       : 145
@@ -391,8 +391,8 @@ Cell Usage :
 #      VCC                         : 1
 #      XORCY                       : 126
 # FlipFlops/Latches                : 127
-#      FDC                         : 52
-#      FDCE                        : 34
+#      FDC                         : 51
+#      FDCE                        : 35
 #      FDCPE                       : 32
 #      FDE                         : 5
 #      FDP                         : 4
@@ -409,9 +409,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-5 
 
- Number of Slices:                      195  out of   8672     2%  
+ Number of Slices:                      193  out of   8672     2%  
  Number of Slice Flip Flops:            127  out of  17344     0%  
- Number of 4 input LUTs:                365  out of  17344     2%  
+ Number of 4 input LUTs:                364  out of  17344     2%  
  Number of IOs:                          24
  Number of bonded IOBs:                  24  out of    250     9%  
  Number of GCLKs:                         2  out of     24     8%  
@@ -438,7 +438,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)              | Load  |
 -----------------------------------+------------------------------------+-------+
 clock                              | BUFGP                              | 49    |
-divisor_clk/clk1seg1               | BUFG                               | 67    |
+divisor_clk/temp1                  | BUFG                               | 67    |
 display_driver/ck_1KHz             | NONE(display_driver/selected_dig_4)| 11    |
 -----------------------------------+------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -473,7 +473,7 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 6.931ns (Maximum Frequency: 144.282MHz)
-   Minimum input arrival time before clock: 5.935ns
+   Minimum input arrival time before clock: 5.726ns
    Maximum output required time after clock: 5.406ns
    Maximum combinational path delay: No path found
 
@@ -484,7 +484,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock'
   Clock period: 6.931ns (frequency: 144.282MHz)
-  Total number of paths / destination ports: 3625 / 50
+  Total number of paths / destination ports: 3626 / 51
 -------------------------------------------------------------------------
 Delay:               6.931ns (Levels of Logic = 6)
   Source:            display_driver/count_25K_1 (FF)
@@ -509,15 +509,15 @@ Delay:               6.931ns (Levels of Logic = 6)
                                        (65.6% logic, 34.4% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'divisor_clk/clk1seg1'
+Timing constraint: Default period analysis for Clock 'divisor_clk/temp1'
   Clock period: 5.966ns (frequency: 167.605MHz)
-  Total number of paths / destination ports: 3464 / 132
+  Total number of paths / destination ports: 3528 / 132
 -------------------------------------------------------------------------
 Delay:               5.966ns (Levels of Logic = 32)
   Source:            contador_seg/counter_2 (FF)
   Destination:       contador_seg/counter_31 (FF)
-  Source Clock:      divisor_clk/clk1seg1 rising
-  Destination Clock: divisor_clk/clk1seg1 rising
+  Source Clock:      divisor_clk/temp1 rising
+  Destination Clock: divisor_clk/temp1 rising
 
   Data Path: contador_seg/counter_2 to contador_seg/counter_31
                                 Gate     Net
@@ -585,26 +585,26 @@ Delay:               2.660ns (Levels of Logic = 2)
                                        (62.9% logic, 37.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'divisor_clk/clk1seg1'
-  Total number of paths / destination ports: 396 / 68
+Timing constraint: Default OFFSET IN BEFORE for Clock 'divisor_clk/temp1'
+  Total number of paths / destination ports: 204 / 36
 -------------------------------------------------------------------------
-Offset:              5.935ns (Levels of Logic = 4)
-  Source:            chave<3> (PAD)
-  Destination:       contador_min/counter_31 (FF)
-  Destination Clock: divisor_clk/clk1seg1 rising
+Offset:              5.726ns (Levels of Logic = 4)
+  Source:            carga (PAD)
+  Destination:       contador_min/counter_6 (FF)
+  Destination Clock: divisor_clk/temp1 rising
 
-  Data Path: chave<3> to contador_min/counter_31
+  Data Path: carga to contador_min/counter_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.106   0.690  chave_3_IBUF (chave_3_IBUF)
-     LUT3:I0->O            1   0.612   0.387  contador_min/counter_and000117 (contador_min/counter_and000117)
-     LUT4:I2->O            1   0.612   0.360  contador_min/counter_and000144_SW0 (N79)
-     LUT4:I3->O           32   0.612   1.073  contador_min/counter_and000144 (contador_min/counter_and0001)
-     FDCPE:CE                  0.483          contador_min/counter_31
+     IBUF:I->O             4   1.106   0.651  carga_IBUF (carga_IBUF)
+     LUT3:I0->O            6   0.612   0.638  state_machine/terminou_mux00001 (state_machine/terminou_mux0000)
+     LUT4:I1->O           43   0.612   1.228  contador_min/counter_and0000 (contador_min/counter_and0000)
+     LUT4:I0->O            1   0.612   0.000  contador_min/counter_Mmux_Q_mux000025 (contador_min/counter_Q_mux0000<0>)
+     FDCPE:D                   0.268          contador_min/counter_0
     ----------------------------------------
-    Total                      5.935ns (3.425ns logic, 2.510ns route)
-                                       (57.7% logic, 42.3% route)
+    Total                      5.726ns (3.210ns logic, 2.516ns route)
+                                       (56.1% logic, 43.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'display_driver/ck_1KHz'
@@ -627,13 +627,13 @@ Offset:              3.822ns (Levels of Logic = 2)
                                        (57.6% logic, 42.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'divisor_clk/clk1seg1'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'divisor_clk/temp1'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Offset:              4.040ns (Levels of Logic = 1)
   Source:            state_machine/terminou (FF)
   Destination:       parado (PAD)
-  Source Clock:      divisor_clk/clk1seg1 rising
+  Source Clock:      divisor_clk/temp1 rising
 
   Data Path: state_machine/terminou to parado
                                 Gate     Net
@@ -668,13 +668,13 @@ Offset:              5.406ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 1.99 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 2.44 secs
  
 --> 
 
 
-Total memory usage is 620576 kilobytes
+Total memory usage is 620644 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)

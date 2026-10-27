@@ -13,7 +13,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="divider10" type="divider">
       <obj_property name="label">Inputs</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -44,9 +44,25 @@
       <obj_property name="ElementShortName">chave[6:0]</obj_property>
       <obj_property name="ObjectShortName">chave[6:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="divider19" type="divider">
+      <obj_property name="label">Sinais internos</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cronometro_tb/uut/divisor_clk/clk1seg" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk1seg</obj_property>
+      <obj_property name="ObjectShortName">clk1seg</obj_property>
+      <obj_property name="label">clk1seg</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
    <wvobject fp_name="/cronometro_tb/uut/pst" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">pst</obj_property>
       <obj_property name="ObjectShortName">pst</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
    </wvobject>
    <wvobject fp_name="divider11" type="divider">
       <obj_property name="label">Tempo</obj_property>
