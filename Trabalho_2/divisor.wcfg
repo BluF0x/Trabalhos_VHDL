@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/divisor_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="divisor_tb" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/divisor_tb/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/divisor_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/divisor_tb/clk1seg" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk1seg</obj_property>
+      <obj_property name="ObjectShortName">clk1seg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/divisor_tb/max_clk" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">max_clk</obj_property>
+      <obj_property name="ObjectShortName">max_clk</obj_property>
+   </wvobject>
+</wave_config>

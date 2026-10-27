@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/ise/VHDL/Trabalhos_VHDL/Trabalho_2/state_machine_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="state_machine_tb" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/state_machine_tb/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/carga" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">carga</obj_property>
+      <obj_property name="ObjectShortName">carga</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/conta" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">conta</obj_property>
+      <obj_property name="ObjectShortName">conta</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/min_zero" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">min_zero</obj_property>
+      <obj_property name="ObjectShortName">min_zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/seg_zero" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">seg_zero</obj_property>
+      <obj_property name="ObjectShortName">seg_zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/pst" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pst[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/state_machine_tb/parado" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">parado</obj_property>
+      <obj_property name="ObjectShortName">parado</obj_property>
+   </wvobject>
+</wave_config>
