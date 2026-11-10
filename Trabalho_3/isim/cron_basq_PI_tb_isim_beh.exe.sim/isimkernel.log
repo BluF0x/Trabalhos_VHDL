@@ -1,0 +1,30 @@
+Command line:
+   cron_basq_PI_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59675
+
+Tue Nov 10 22:12:37 2026
+
+
+ Elaboration Time: 0.09 sec
+
+ Current Memory Usage: 203.055 Meg
+
+ Total Signals          : 63
+ Total Nets             : 93
+ Total Signal Drivers   : 29
+ Total Blocks           : 8
+ Total Primitive Blocks : 6
+ Total Processes        : 27
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 581
+Total Line Count : 60
+Total Line Count : 60
+
+ Total Simulation Time: 0.41 sec
+
+ Current Memory Usage: 280.654 Meg
+
+Tue Nov 10 22:15:48 2026
+

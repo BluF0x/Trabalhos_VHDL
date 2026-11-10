@@ -37,7 +37,7 @@ entity contador_desc is
 		count_out : out std_logic_vector(7 downto 0)
 	);
 end contador_desc;
-
+architecture Behavioral of contador_desc is
 	signal counter : integer := 0;
 begin
 	

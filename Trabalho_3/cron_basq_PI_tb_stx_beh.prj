@@ -1,0 +1,4 @@
+vhdl isim_temp "divisor.vhd"
+vhdl isim_temp "contador_desc.vhd"
+vhdl isim_temp "cron_basq_PI.vhd"
+vhdl isim_temp "cron_basq_PI_tb.vhd"

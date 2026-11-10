@@ -1,0 +1,5 @@
+set -tmpdir "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/xst/projnav.tmp"
+set -xsthdpdir "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/xst"
+elaborate
+-ifn cron_basq_PI.prj
+-ifmt mixed

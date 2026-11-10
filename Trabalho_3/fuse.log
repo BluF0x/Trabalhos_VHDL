@@ -1,21 +1,28 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle_tb_isim_beh.exe -prj /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle_tb_beh.prj work.fsm_controle_tb 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_isim_beh.exe -prj /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_beh.prj cron_basq_PI_tb 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 3
 Turning on mult-threading, number of parallel sub-compilation jobs: 6 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm.vhd" into library work
-Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_TB.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd" into library work
+Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 95308 KB
-Fuse CPU Usage: 680 ms
+Fuse Memory Usage: 96844 KB
+Fuse CPU Usage: 660 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture fsm_controle of entity fsm_controle [fsm_controle_default]
-Compiling architecture fsm_controle_tb of entity fsm_controle_tb
+Compiling package numeric_std
+Compiling architecture behavioral of entity divisor [\divisor(250000)\]
+Compiling architecture behavioral of entity contador_desc [\contador_desc(99)\]
+Compiling architecture behavioral of entity contador_desc [\contador_desc(59)\]
+Compiling architecture behavioral of entity contador_desc [\contador_desc(16)\]
+Compiling architecture behavioral of entity cron_basq_PI [cron_basq_pi_default]
+Compiling architecture behavioral of entity cron_basq_pi_tb
 Time Resolution for simulation is 1ps.
-Compiled 5 VHDL Units
-Built simulation executable /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle_tb_isim_beh.exe
-Fuse Memory Usage: 527980 KB
-Fuse CPU Usage: 830 ms
-GCC CPU Usage: 910 ms
+Compiled 14 VHDL Units
+Built simulation executable /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_isim_beh.exe
+Fuse Memory Usage: 535588 KB
+Fuse CPU Usage: 990 ms
+GCC CPU Usage: 920 ms

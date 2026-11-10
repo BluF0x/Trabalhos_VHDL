@@ -1,0 +1,21 @@
+V3 11
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd 2026/11/10.19:28:02 P.20131013
+EN work/contador_desc 1794345940 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/contador_desc/Behavioral 1794345941 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd \
+      EN work/contador_desc 1794345940
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd 2026/11/10.21:25:34 P.20131013
+EN work/cron_basq_PI 1794345942 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/cron_basq_PI/Behavioral 1794345943 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd \
+      EN work/cron_basq_PI 1794345942 CP work/divisor CP work/contador_desc
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd 2026/10/26.21:27:31 P.20131013
+EN work/divisor 1794345938 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/divisor/Behavioral 1794345939 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd EN work/divisor 1794345938
