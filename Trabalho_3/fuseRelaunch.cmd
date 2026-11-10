@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle_tb_beh.prj" "work.fsm_controle_tb" 

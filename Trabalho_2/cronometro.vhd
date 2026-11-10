@@ -121,8 +121,6 @@ begin
 	td0 <= '1' & segundos_bcd(3 downto 0) & '1';
 	
 
-	
-
 	display_driver: entity work.dspl_drv
 	port map(
 		clock => clock,
