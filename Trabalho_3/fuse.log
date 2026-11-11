@@ -9,8 +9,8 @@ Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd" in
 Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 96840 KB
-Fuse CPU Usage: 640 ms
+Fuse Memory Usage: 96844 KB
+Fuse CPU Usage: 720 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -21,8 +21,9 @@ Compiling architecture behavioral of entity contador_desc [\contador_desc(16)\]
 Compiling architecture behavioral of entity cron_basq_PI [\cron_basq_PI(2)\]
 Compiling architecture behavioral of entity cron_basq_pi_tb
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 14 VHDL Units
 Built simulation executable /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_isim_beh.exe
-Fuse Memory Usage: 535584 KB
-Fuse CPU Usage: 950 ms
-GCC CPU Usage: 720 ms
+Fuse Memory Usage: 535588 KB
+Fuse CPU Usage: 1070 ms
+GCC CPU Usage: 1180 ms

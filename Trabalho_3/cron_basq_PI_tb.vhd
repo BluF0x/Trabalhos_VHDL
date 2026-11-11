@@ -45,12 +45,9 @@ begin
     c_segundos <= "000011";
     c_centesimos <= "0000000";
 
-    -- Carrega 02:03:04 nos contadores.
     carga <= '0', '1' after 30 ns, '0' after 40 ns;
 
-    -- Habilita a contagem regressiva após a carga.
     para_continua <= '0', '1' after 50 ns;
 
-    -- Solicita o avanço do quarto durante um ciclo de clock.
     modo_novoquarto <= '0', '1' after 12 us, '0' after 12 us + 10 ns;
 end Behavioral;

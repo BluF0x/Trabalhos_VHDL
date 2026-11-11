@@ -30,10 +30,10 @@ entity cron_basq_PI is
 end cron_basq_PI;
 
 architecture Behavioral of cron_basq_PI is
-    signal ce_ms, ce_seg, ce_min, clk_ms : std_logic;
+    signal ce_ms, ce_seg, ce_min, clk_ms, reset_carga : std_logic;
     signal centesimos_int, segundos_int, minutos_int : STD_LOGIC_VECTOR (7 downto 0);
     signal c_int_minutos, c_int_segundos : STD_LOGIC_VECTOR (6 downto 0);
-	 signal quarto_int : STD_LOGIC_VECTOR(1 downto 0);
+	signal quarto_int : STD_LOGIC_VECTOR(1 downto 0);
 begin
 
 	-- contador_desc usa 7 bits de entrada de carga
@@ -74,22 +74,29 @@ begin
         count_out => segundos_int
     );
 
+    -- O contador de minutos incializa com um valor inicial no reset
+    -- reset_carga é acionado tanto quando o botão 'reset' é pressionado,
+    -- quanto quando o botão 'carga' é pressionado.
+    -- O que determina se a carga é a carga padrão dos modos, ou uma carga
+    -- especifica definida pelo usuario, é o modulo pai.
     cont_m: entity work.contador_desc 
     generic map(MAX_VALUE => 16)
     port map (
         clk => clk_ms,
-        reset => reset,
+        reset => '0',
         carga_ext => c_int_minutos, 
-        carga => carga,
+        carga => reset_carga,
         enable => ce_min,
         count_out => minutos_int
     );
 	 
-	 segundos <= segundos_int(5 downto 0);
-	 minutos  <= minutos_int (3 downto 0);
-	 centesimos <= centesimos_int (6 downto 0);
+    reset_carga <= '1' when carga = '1' or reset = '1' else '0';
+
+	segundos <= segundos_int(5 downto 0);
+	minutos  <= minutos_int (3 downto 0);
+	centesimos <= centesimos_int (6 downto 0);
 	 
-	 ce_ms <= '1' when para_continua = '1' else '0';
+	ce_ms <= '1' when para_continua = '1' else '0';
     ce_seg <= '1' when para_continua = '1' and centesimos_int = "00000000" else '0';
     ce_min <= '1' when para_continua = '1' and segundos_int = "00000000" and centesimos_int = "00000000" else '0';
 
@@ -98,8 +105,8 @@ begin
     conta_quarto: process(clock, modo_novoquarto, reset) begin
         if reset = '1' then 
             quarto_int <= "00";
-		  elsif carga = '1' then
-				quarto_int <= c_quarto;
+		elsif carga = '1' then
+			quarto_int <= c_quarto;
         elsif clock'event and clock = '1' then 
             if modo_novoquarto = '1' then
                 quarto_int <= std_logic_vector(unsigned(quarto_int) +1);

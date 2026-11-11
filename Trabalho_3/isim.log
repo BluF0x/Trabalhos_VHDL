@@ -12,18 +12,10 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart
-# run 10 us
+# run 20 us
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 10 us
 # run 20 us
 # run 20 us
-# run 20 us
-# run 20 us
-# run 100 us
-# run 1 s
-Stopped at time : 37639590 ns : File "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb.vhd" Line 38
-# restart
-# run 400 us
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
+# run 200 us
+# exit 0

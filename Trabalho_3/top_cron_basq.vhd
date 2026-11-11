@@ -1,34 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    20:00:33 11/08/2026 
--- Design Name: 
--- Module Name:    top_cron_basq - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-USE IEE.NUMERIC_STD.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity top_cron_basq is
     port (
@@ -37,15 +10,30 @@ entity top_cron_basq is
         c_quarto, c_segundos : in std_logic_vector(1 downto 0);
         anodo, minutos, quarto : out std_logic_vector(3 downto 0);
         DSPL_sete_seg : out std_logic_vector(7 downto 0)
-    )
+    );
 end top_cron_basq;
 
 architecture Behavioral of top_cron_basq is
-    constant CKS_POR_CENTESIMO : integer := 250_000;
+    type MODOS is (NBA, FIBA);
 
+    constant CKS_POR_CENTESIMO : integer := 250_000;
+    signal carga_min : integer;
+    signal mode : MODOS;
     signal carga_int, para_continua_int, modo_novoquarto_int : std_logic;
+
+    -- Sinais da FSM
+    signal carrega_tempo_int, conta_int, inicializa_int, avanca_quarto_int : std_logic;
+
     signal fim_quarto, ultimo_quarto : std_logic;
-    signal segundo_conv : std_logic_vector(5 downto 0);
+
+    signal centesimos_bcd, segundos_bcd : std_logic_vector(7 downto 0);
+
+    signal dt0, dt1, dt2, dt3 : std_logic_vector(5 downto 0);
+
+    signal minutos_int : std_logic_vector(3 downto 0);
+    signal segundos_b, segundos_conv, segundos_int : std_logic_vector(5 downto 0);
+    signal centesimos_b : std_logic_vector(6 downto 0);
+    signal quarto_int : std_logic_vector (1 downto 0);
 
 	type ROM is array (0 to 99) of std_logic_vector (7 downto 0);
 		constant conv_to_BCD : ROM:=(
@@ -77,7 +65,6 @@ architecture Behavioral of top_cron_basq is
 
 begin
 
-    segundo_conv => conv_seg(c_segundos);
 
     d1: entity work.debounce port map(
         clock=> clock,
@@ -106,17 +93,92 @@ begin
         para_continua => para_continua_int,
         modo_novoquarto => modo_novoquarto_int,
         carga => carga_int,
+        fim_quarto => fim_quarto,
+        ultimo_quarto => ultimo_quarto,
         carga_valida => '1',
+
+        inicializa => inicializa_int,
+        carrega_tempo => carrega_tempo_int,
+        avanca_quarto => avanca_quarto_int,
+        conta => conta_int
     );
 
     cron_basq: entity work.cron_basq_PI 
-    generic map(CKS_POR_CENTESIMO => CKS_POR_CENTESIMO )
+    generic map(MAXCOUNT => CKS_POR_CENTESIMO)
     port map(
         clock => clock,
         reset => reset,
-        carga => 
-        c_segundos 
-    )
+        carga => carrega_tempo_int,
+        para_continua => conta_int,
+        modo_novoquarto => avanca_quarto_int,
 
+        c_segundos => segundos_int,
+        c_centesimos => "0000000", -- Centésimos sempre inicia em 0
+        c_minutos => minutos_int,
+        c_quarto => c_quarto,
+        
+        quarto => quarto_int,
+        minutos => minutos,
+        segundos => segundos_b,
+        centesimos => centesimos_b
+    );
 
+    dspl_driver: entity work.dspl_drv
+    port map (
+        clock => clock,
+        reset => reset,
+        d3 => dt3,
+        d2 => dt2,
+        d1 => dt1,
+        d0 => dt0,
+        an => anodo,
+        dec_ddp => DSPL_sete_seg
+    );
+
+    fim_quarto <= '1' 
+    when 
+        centesimos_b = "0000000" and
+        segundos_b = "000000" and
+        minutos = "0000" 
+    else '0';
+
+    ultimo_quarto <= '1' when fim_quarto = '1' and quarto_int = "11" else '0';
+
+    quarto <= 
+        "0001" when quarto_int = "00" else
+        "0010" when quarto_int = "01" else
+        "0100" when quarto_int = "10" else
+        "1000"; 
+
+    segundos_conv <= conv_seg(c_segundos);
+    segundos_bcd <= conv_to_BCD(to_integer(unsigned(segundos_b)));
+    centesimos_bcd <= conv_to_BCD(to_integer(unsigned(centesimos_b)));
+
+    dt3 <= '1' & segundos_bcd(7 downto 4) & '1';
+    dt2 <= '1' & segundos_bcd(3 downto 0) & '1';
+    dt1 <= '1' & centesimos_bcd(7 downto 4) & '0';
+    dt0 <= '1' & centesimos_bcd(3 downto 0) & '1';
+
+    -- A carga de minutos é a carga padrão caso esteja no fim do quarto 
+    -- e o botão de carga não é pressionado.
+    minutos_int <= 
+        "1010" when mode = FIBA and fim_quarto = '1' and carga = '0' else -- 10 min
+        "1100" when mode = NBA and fim_quarto = '1' and carga = '0' else -- 12 min
+        c_minutos;
+    
+    segundos_int <= segundos_conv when carga = '1' else (others => '0');
+
+    -- Flip flop com reset assincrono que determina o modo
+    -- FIBA é o modo padrão
+    mode_set: process(clock, reset) begin
+        if clock'event and clock = '1' then
+            if modo_novoquarto = '1' and inicializa_int = '1' then
+                mode <= NBA;
+            else 
+                mode <= FIBA;
+            end if;
+        elsif reset = '1' then 
+            mode <= FIBA;
+        end if;
+    end process;
 end Behavioral;

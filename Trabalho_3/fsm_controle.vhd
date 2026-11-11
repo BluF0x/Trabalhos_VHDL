@@ -7,13 +7,14 @@ entity fsm_controle is
         para_continua, modo_novoquarto, carga : in STD_LOGIC;
         fim_quarto, ultimo_quarto, carga_valida : in STD_LOGIC;
 
-        inicializa, carrega_tempo, avanca_quarto, conta : out STD_LOGIC;
-        estado_dbg : out STD_LOGIC_VECTOR(1 downto 0)
+        inicializa, carrega_tempo, avanca_quarto, conta : out STD_LOGIC
+        --estado_dbg : out STD_LOGIC_VECTOR(1 downto 0)
     );
 end fsm_controle;
 
 architecture fsm_controle of fsm_controle is
     type states is (MODE_SET, IDLE, COUNTING, STOPPED);
+    signal estado_dbg : STD_LOGIC_VECTOR(1 downto 0);
     signal present, prox : states;
 
     signal parado, carregar, avancar, iniciar : STD_LOGIC;
@@ -74,9 +75,9 @@ begin
                  and para_continua = '0' and fim_quarto = '0' else '0';
 
 
-    estado_dbg <= "00" when present = MODE_SET else
-                  "01" when present = IDLE else
-                  "10" when present = COUNTING else
-                  "11";
+--    estado_dbg <= "00" when present = MODE_SET else
+--                  "01" when present = IDLE else
+--                  "10" when present = COUNTING else
+--                  "11";
 
 end fsm_controle;
