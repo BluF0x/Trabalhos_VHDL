@@ -13,22 +13,24 @@ architecture Behavioral of cron_basq_PI_tb is
     signal c_segundos, segundos : std_logic_vector(5 downto 0);
     signal c_centesimos, centesimos : std_logic_vector(6 downto 0);
 begin
+
     uut: entity work.cron_basq_PI
-        port map (
-            para_continua   => para_continua,
-            modo_novoquarto => modo_novoquarto,
-            carga           => carga,
-            clock           => clock,
-            reset           => reset,
-            c_quarto        => c_quarto,
-            c_minutos       => c_minutos,
-            c_segundos      => c_segundos,
-            c_centesimos    => c_centesimos,
-            quarto          => quarto,
-            minutos         => minutos,
-            segundos        => segundos,
-            centesimos      => centesimos
-        );
+			generic map(MAXCOUNT => 2)
+         port map (
+             para_continua   => para_continua,
+             modo_novoquarto => modo_novoquarto,
+             carga           => carga,
+             clock           => clock,
+             reset           => reset,
+             c_quarto        => c_quarto,
+             c_minutos       => c_minutos,
+             c_segundos      => c_segundos,
+             c_centesimos    => c_centesimos,
+             quarto          => quarto,
+             minutos         => minutos,
+             segundos        => segundos,
+             centesimos      => centesimos
+         );
 
     clock_process: process
     begin
@@ -39,9 +41,9 @@ begin
     reset <= '1', '0' after 20 ns;
 
     c_quarto <= "00";
-    c_minutos <= "0010";
+    c_minutos <= "0001";
     c_segundos <= "000011";
-    c_centesimos <= "0000100";
+    c_centesimos <= "0000000";
 
     -- Carrega 02:03:04 nos contadores.
     carga <= '0', '1' after 30 ns, '0' after 40 ns;

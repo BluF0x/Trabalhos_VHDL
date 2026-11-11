@@ -30,7 +30,7 @@ entity cron_basq_PI is
 end cron_basq_PI;
 
 architecture Behavioral of cron_basq_PI is
-    signal ce_ms, ce_seg, ce_min, ce_q, clk_ms : std_logic;
+    signal ce_ms, ce_seg, ce_min, clk_ms : std_logic;
     signal centesimos_int, segundos_int, minutos_int : STD_LOGIC_VECTOR (7 downto 0);
     signal c_int_minutos, c_int_segundos : STD_LOGIC_VECTOR (6 downto 0);
 	 signal quarto_int : STD_LOGIC_VECTOR(1 downto 0);
@@ -44,17 +44,14 @@ begin
 
     -- Reutilizado do T2
     cont_1_ms: entity work.divisor
-    generic map(HALF_SEC_CLK_COUNTER => 250_000)
+    generic map(HALF_SEC_CLK_COUNTER => MAXCOUNT)
     port map(
         clock => clock,
         reset => reset,
         clk1seg => clk_ms
     );
 
-    ce_ms <= '1' when para_continua = '1' and clk_ms = '1';
-    ce_seg <= '1' when para_continua = '1' and centesimos_int = "00000000";
-    ce_min <= '1' when para_continua = '1' and segundos_int = "00000000";
-
+   
     cont_ms: entity work.contador_desc 
     generic map(MAX_VALUE => 99)
     port map (
@@ -92,12 +89,17 @@ begin
 	 minutos  <= minutos_int (3 downto 0);
 	 centesimos <= centesimos_int (6 downto 0);
 	 
-	 
+	 ce_ms <= '1' when para_continua = '1' else '0';
+    ce_seg <= '1' when para_continua = '1' and centesimos_int = "00000000" else '0';
+    ce_min <= '1' when para_continua = '1' and segundos_int = "00000000" and centesimos_int = "00000000" else '0';
+
 
     -- A validação de modo_novoquarto é feita fora do módulo
     conta_quarto: process(clock, modo_novoquarto, reset) begin
         if reset = '1' then 
-            quarto <= "00";
+            quarto_int <= "00";
+		  elsif carga = '1' then
+				quarto_int <= c_quarto;
         elsif clock'event and clock = '1' then 
             if modo_novoquarto = '1' then
                 quarto_int <= std_logic_vector(unsigned(quarto_int) +1);
