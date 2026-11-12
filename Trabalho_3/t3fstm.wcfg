@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/ise/t3_fsm/fsm_controle_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="fsm_controle_tb" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="divider19" type="divider">
+      <obj_property name="label">CLOCK E RESET</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#808000</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider17" type="divider">
+      <obj_property name="label">COMANDOS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#008080</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/para_continua" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">para_continua</obj_property>
+      <obj_property name="ObjectShortName">para_continua</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/modo_novoquarto" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">modo_novoquarto</obj_property>
+      <obj_property name="ObjectShortName">modo_novoquarto</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/carga" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">carga</obj_property>
+      <obj_property name="ObjectShortName">carga</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider18" type="divider">
+      <obj_property name="label">CONDIÇÔES</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#4d4d99</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/fim_quarto" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fim_quarto</obj_property>
+      <obj_property name="ObjectShortName">fim_quarto</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/ultimo_quarto" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ultimo_quarto</obj_property>
+      <obj_property name="ObjectShortName">ultimo_quarto</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/carga_valida" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">carga_valida</obj_property>
+      <obj_property name="ObjectShortName">carga_valida</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider20" type="divider">
+      <obj_property name="label">SAIDAS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#800000</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/inicializa" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inicializa</obj_property>
+      <obj_property name="ObjectShortName">inicializa</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/carrega_tempo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">carrega_tempo</obj_property>
+      <obj_property name="ObjectShortName">carrega_tempo</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/avanca_quarto" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">avanca_quarto</obj_property>
+      <obj_property name="ObjectShortName">avanca_quarto</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/conta" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">conta</obj_property>
+      <obj_property name="ObjectShortName">conta</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider21" type="divider">
+      <obj_property name="label">ESTADO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#008000</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fsm_controle_tb/estado_dbg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">estado_dbg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">estado_dbg[1:0]</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      <wvobject fp_name="/fsm_controle_tb/estado_dbg[1]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">estado_dbg[1]</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fsm_controle_tb/estado_dbg[0]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">estado_dbg[0]</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
