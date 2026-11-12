@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_beh.prj" "work.cron_basq_PI_tb" 
+-intstyle "ise" -incremental -o "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq_tb_isim_beh.exe" -prj "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq_tb_beh.prj" "work.top_cron_basq_tb" 

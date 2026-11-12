@@ -1,0 +1,46 @@
+# Clock
+NET "clock" LOC = B8;
+
+# LED
+NET "minutos[0]" LOC = J14;
+NET "minutos[1]" LOC = J15;
+NET "minutos[2]" LOC = K15;
+NET "minutos[3]" LOC = K14;
+NET "quarto[0]"  LOC = E16;
+NET "quarto[1]"  LOC = P16;
+NET "quarto[2]"  LOC = E4;
+NET "quarto[3]"  LOC = P4;
+
+# Botões
+NET "reset"             LOC = B18;
+NET "modo_novoquarto"   LOC = D18;
+NET "para_continua"     LOC = E18;
+NET "carga"             LOC = H13;
+
+# Alavancas
+NET "c_segundos[0]" LOC = G18;
+NET "c_segundos[1]" LOC = H18;
+NET "c_minutos[0]"  LOC = K18;
+NET "c_minutos[1]"  LOC = K17;
+NET "c_minutos[2]"  LOC = L14;
+NET "c_minutos[3]"  LOC = L13;
+NET "c_quarto[0]"   LOC = N17;
+NET "c_quarto[1]"   LOC = R17;
+
+# Display
+
+# Enable
+NET "anodo[3]" LOC = F15;                                            
+NET "anodo[2]" LOC = C18;
+NET "anodo[1]" LOC = H17;
+NET "anodo[0]" LOC = F17;
+
+# Segamentos
+NET "DSPL_sete_seg[7]" LOC = L18;
+NET "DSPL_sete_seg[6]" LOC = F18;
+NET "DSPL_sete_seg[5]" LOC = D17;
+NET "DSPL_sete_seg[4]" LOC = D16;
+NET "DSPL_sete_seg[3]" LOC = G14;
+NET "DSPL_sete_seg[2]" LOC = J17;
+NET "DSPL_sete_seg[1]" LOC = H14;
+NET "DSPL_sete_seg[0]" LOC = C17;

@@ -1,0 +1,8 @@
+vhdl work "divisor.vhd"
+vhdl work "contador_desc.vhd"
+vhdl work "fsm_controle.vhd"
+vhdl work "display_drive.vhd"
+vhdl work "debounce.vhd"
+vhdl work "cron_basq_PI.vhd"
+vhdl work "top_cron_basq.vhd"
+vhdl work "top_cron_basq_tb.vhd"

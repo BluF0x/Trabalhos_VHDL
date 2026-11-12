@@ -25,8 +25,7 @@ begin
             inicializa => inicializa,
             carrega_tempo => carrega_tempo,
             avanca_quarto => avanca_quarto,
-            conta => conta,
-            estado_dbg => estado_dbg
+            conta => conta
         );
 
 

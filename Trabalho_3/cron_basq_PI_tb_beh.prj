@@ -1,4 +1,0 @@
-vhdl work "divisor.vhd"
-vhdl work "contador_desc.vhd"
-vhdl work "cron_basq_PI.vhd"
-vhdl work "cron_basq_PI_tb.vhd"

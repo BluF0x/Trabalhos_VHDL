@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI_tb_isim_beh.wdb 
+Running: /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -10,12 +10,13 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /top_cron_basq_tb/uut/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /top_cron_basq_tb/uut/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
 # restart
-# run 20 us
+# run 4 ms
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /top_cron_basq_tb/uut/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /top_cron_basq_tb/uut/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-# run 20 us
-# run 20 us
-# run 200 us
 # exit 0

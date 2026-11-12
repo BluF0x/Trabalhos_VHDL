@@ -34,7 +34,7 @@ begin
     begin
         if reset = '1' then
             present <= MODE_SET;
-        elsif rising_edge(clock) then
+        elsif clock'event and clock = '1' then
             present <= prox;
         end if;
     end process;
@@ -78,6 +78,6 @@ begin
 --    estado_dbg <= "00" when present = MODE_SET else
 --                  "01" when present = IDLE else
 --                  "10" when present = COUNTING else
---                  "11";
+--                  "11" = stopped;
 
 end fsm_controle;

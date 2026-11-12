@@ -34,20 +34,39 @@ begin
 
     clock_process: process
     begin
-        clock <= not clock;
+        clock <= '0';
+        wait for 5 ns;
+        clock <= '1';
         wait for 5 ns;
     end process;
 
-    reset <= '1', '0' after 20 ns;
+    stimulus_process: process
+    begin
+        reset <= '1';
+        carga <= '0';
+        para_continua <= '0';
+        modo_novoquarto <= '0';
+        c_quarto <= "00";
+        c_minutos <= "0001";
+        c_segundos <= "000011";
+        c_centesimos <= "0000000";
 
-    c_quarto <= "00";
-    c_minutos <= "0001";
-    c_segundos <= "000011";
-    c_centesimos <= "0000000";
+        wait for 20 ns;
+        reset <= '0';
 
-    carga <= '0', '1' after 30 ns, '0' after 40 ns;
+        wait for 10 ns;
+        carga <= '1';
+        wait for 10 ns;
+        carga <= '0';
 
-    para_continua <= '0', '1' after 50 ns;
+        wait for 10 ns;
+        para_continua <= '1';
 
-    modo_novoquarto <= '0', '1' after 12 us, '0' after 12 us + 10 ns;
+        wait for 12 us;
+        modo_novoquarto <= '1';
+        wait for 10 ns;
+        modo_novoquarto <= '0';
+
+        wait;
+    end process;
 end Behavioral;

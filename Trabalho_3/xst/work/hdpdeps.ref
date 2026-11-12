@@ -1,21 +1,49 @@
-V3 11
+V3 28
 FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd 2026/11/10.19:28:02 P.20131013
-EN work/contador_desc 1794345940 \
+EN work/contador_desc 1794525714 \
       FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/contador_desc/Behavioral 1794345941 \
+AR work/contador_desc/Behavioral 1794525715 \
       FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/contador_desc.vhd \
-      EN work/contador_desc 1794345940
-FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd 2026/11/10.21:25:34 P.20131013
-EN work/cron_basq_PI 1794345942 \
+      EN work/contador_desc 1794525714
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd 2026/11/12.23:06:36 P.20131013
+EN work/cron_basq_PI 1794525390 \
       FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/cron_basq_PI/Behavioral 1794345943 \
+AR work/cron_basq_PI/Behavioral 1794525391 \
       FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/cron_basq_PI.vhd \
-      EN work/cron_basq_PI 1794345942 CP work/divisor CP work/contador_desc
+      EN work/cron_basq_PI 1794525390 CP work/divisor CP work/contador_desc
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/debounce.vhd 2026/11/08.19:03:01 P.20131013
+EN work/Debounce 1794525716 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/debounce.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Debounce/Debounce 1794525717 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/debounce.vhd EN work/Debounce 1794525716
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/display_drive.vhd 2026/10/22.13:19:53 P.20131013
+EN work/dspl_drv 1794525392 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/display_drive.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/dspl_drv/dspl_drv 1794525393 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/display_drive.vhd \
+      EN work/dspl_drv 1794525392 CP with
 FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd 2026/10/26.21:27:31 P.20131013
-EN work/divisor 1794345938 \
+EN work/divisor 1794525712 \
       FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/divisor/Behavioral 1794345939 \
-      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd EN work/divisor 1794345938
+AR work/divisor/Behavioral 1794525713 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/divisor.vhd EN work/divisor 1794525712
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle.vhd 2026/11/12.22:43:53 P.20131013
+EN work/fsm_controle 1794525388 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/fsm_controle/fsm_controle 1794525389 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle.vhd \
+      EN work/fsm_controle 1794525388
+FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq.vhd 2026/11/12.22:44:13 P.20131013
+EN work/top_cron_basq 1794525394 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/top_cron_basq/Behavioral 1794525395 \
+      FL /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq.vhd \
+      EN work/top_cron_basq 1794525394 CP work/debounce CP work/fsm_controle \
+      CP work/cron_basq_PI CP work/dspl_drv

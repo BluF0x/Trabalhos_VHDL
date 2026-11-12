@@ -4,6 +4,8 @@ USE IEEE.NUMERIC_STD.ALL;
 
 
 entity top_cron_basq is
+    generic(CLKS_POR_CENTESIMO : integer := 250_000;
+				DIV_RATE : integer := 4_000_000);
     port (
         clock, carga, modo_novoquarto, para_continua, reset : in std_logic;
         c_minutos : in std_logic_vector(3 downto 0);
@@ -16,13 +18,13 @@ end top_cron_basq;
 architecture Behavioral of top_cron_basq is
     type MODOS is (NBA, FIBA);
 
-    constant CKS_POR_CENTESIMO : integer := 250_000;
     signal carga_min : integer;
     signal mode : MODOS;
     signal carga_int, para_continua_int, modo_novoquarto_int : std_logic;
 
     -- Sinais da FSM
     signal carrega_tempo_int, conta_int, inicializa_int, avanca_quarto_int : std_logic;
+    signal carrega_cronometro_int : std_logic;
 
     signal fim_quarto, ultimo_quarto : std_logic;
 
@@ -30,7 +32,7 @@ architecture Behavioral of top_cron_basq is
 
     signal dt0, dt1, dt2, dt3 : std_logic_vector(5 downto 0);
 
-    signal minutos_int : std_logic_vector(3 downto 0);
+    signal minutos_int, minutos_b : std_logic_vector(3 downto 0);
     signal segundos_b, segundos_conv, segundos_int : std_logic_vector(5 downto 0);
     signal centesimos_b : std_logic_vector(6 downto 0);
     signal quarto_int : std_logic_vector (1 downto 0);
@@ -103,12 +105,26 @@ begin
         conta => conta_int
     );
 
+    carrega_cronometro_int <= carrega_tempo_int or avanca_quarto_int;
+
+    mode_set: process(clock, reset) begin
+        if clock'event and clock = '1' then
+            if inicializa_int = '1' then
+                if modo_novoquarto = '1' then
+                    mode <= NBA;
+                else
+                    mode <= FIBA;
+                end if;
+            end if;
+        end if;
+    end process;
+
     cron_basq: entity work.cron_basq_PI 
-    generic map(MAXCOUNT => CKS_POR_CENTESIMO)
+    generic map(MAXCOUNT => CLKS_POR_CENTESIMO)
     port map(
         clock => clock,
         reset => reset,
-        carga => carrega_tempo_int,
+        carga => carrega_cronometro_int,
         para_continua => conta_int,
         modo_novoquarto => avanca_quarto_int,
 
@@ -118,7 +134,7 @@ begin
         c_quarto => c_quarto,
         
         quarto => quarto_int,
-        minutos => minutos,
+        minutos => minutos_b,
         segundos => segundos_b,
         centesimos => centesimos_b
     );
@@ -139,7 +155,7 @@ begin
     when 
         centesimos_b = "0000000" and
         segundos_b = "000000" and
-        minutos = "0000" 
+        minutos_b = "0000" 
     else '0';
 
     ultimo_quarto <= '1' when fim_quarto = '1' and quarto_int = "11" else '0';
@@ -150,7 +166,8 @@ begin
         "0100" when quarto_int = "10" else
         "1000"; 
 
-    segundos_conv <= conv_seg(c_segundos);
+	minutos <= minutos_b;
+    segundos_conv <= conv_seg(to_integer(unsigned(c_segundos)));
     segundos_bcd <= conv_to_BCD(to_integer(unsigned(segundos_b)));
     centesimos_bcd <= conv_to_BCD(to_integer(unsigned(centesimos_b)));
 
@@ -162,23 +179,11 @@ begin
     -- A carga de minutos é a carga padrão caso esteja no fim do quarto 
     -- e o botão de carga não é pressionado.
     minutos_int <= 
-        "1010" when mode = FIBA and fim_quarto = '1' and carga = '0' else -- 10 min
-        "1100" when mode = NBA and fim_quarto = '1' and carga = '0' else -- 12 min
+        "1010" when mode = FIBA and carga = '0' else -- 10 min
+        "1100" when mode = NBA and carga = '0' else -- 12 min
         c_minutos;
     
     segundos_int <= segundos_conv when carga = '1' else (others => '0');
 
-    -- Flip flop com reset assincrono que determina o modo
-    -- FIBA é o modo padrão
-    mode_set: process(clock, reset) begin
-        if clock'event and clock = '1' then
-            if modo_novoquarto = '1' and inicializa_int = '1' then
-                mode <= NBA;
-            else 
-                mode <= FIBA;
-            end if;
-        elsif reset = '1' then 
-            mode <= FIBA;
-        end if;
-    end process;
+
 end Behavioral;

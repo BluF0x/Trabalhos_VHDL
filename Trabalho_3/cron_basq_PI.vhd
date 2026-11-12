@@ -102,14 +102,15 @@ begin
 
 
     -- A validação de modo_novoquarto é feita fora do módulo
-    conta_quarto: process(clock, modo_novoquarto, reset) begin
+    conta_quarto: process(clock, reset)
+    begin
         if reset = '1' then 
             quarto_int <= "00";
-		elsif carga = '1' then
-			quarto_int <= c_quarto;
-        elsif clock'event and clock = '1' then 
+        elsif rising_edge(clock) then
             if modo_novoquarto = '1' then
                 quarto_int <= std_logic_vector(unsigned(quarto_int) +1);
+            elsif carga = '1' then
+                quarto_int <= c_quarto;
             end if;
         end if;
     end process;
