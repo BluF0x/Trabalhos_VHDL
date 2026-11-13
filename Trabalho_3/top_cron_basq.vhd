@@ -107,28 +107,6 @@ begin
         conta => conta_int
     );
 
-    process(clock, reset)
-    begin
-        if reset = '1' then
-            avanca_quarto_reg <= '0';
-        elsif rising_edge(clock) then
-            avanca_quarto_reg <= avanca_quarto_int;
-        end if;
-    end process;
-
-    carrega_cronometro_int <= carrega_tempo_int or avanca_quarto_reg;
-
-    mode_set: process(clock, reset) begin
-        if clock'event and clock = '1' then
-            if inicializa_int = '1' then
-                if modo_novoquarto = '1' then
-                    mode <= NBA;
-                else
-                    mode <= FIBA;
-                end if;
-            end if;
-        end if;
-    end process;
 
     cron_basq: entity work.cron_basq_PI
     generic map(MAXCOUNT => CLKS_POR_CENTESIMO)
@@ -196,5 +174,27 @@ begin
 
     segundos_int <= segundos_conv when carga = '1' else (others => '0');
 
+    avanca_quarto: process(clock, reset)
+    begin
+        if reset = '1' then
+            avanca_quarto_reg <= '0';
+        elsif clock'event and clock = '1' then
+            avanca_quarto_reg <= avanca_quarto_int;
+        end if;
+    end process;
+
+    carrega_cronometro_int <= carrega_tempo_int or avanca_quarto_reg;
+
+    mode_set: process(clock, reset) begin
+        if clock'event and clock = '1' then
+            if inicializa_int = '1' then
+                if modo_novoquarto = '1' then
+                    mode <= NBA;
+                else
+                    mode <= FIBA;
+                end if;
+            end if;
+        end if;
+    end process;
 
 end Behavioral;

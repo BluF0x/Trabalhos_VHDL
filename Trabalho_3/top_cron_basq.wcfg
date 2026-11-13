@@ -13,7 +13,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="22" />
    <wvobject fp_name="/top_cron_basq_tb/clock" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
@@ -63,6 +63,12 @@
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">128 128 255</obj_property>
       <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_cron_basq_tb/uut/quarto_int" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">quarto_int[1:0]</obj_property>
+      <obj_property name="ObjectShortName">quarto_int[1:0]</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#0000ff</obj_property>
    </wvobject>
    <wvobject fp_name="/top_cron_basq_tb/uut/minutos_int" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">minutos_int[3:0]</obj_property>

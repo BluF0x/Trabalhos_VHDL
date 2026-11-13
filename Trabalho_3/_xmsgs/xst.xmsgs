@@ -5,7 +5,43 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/fsm_controle.vhd</arg>&quot; Line <arg fmt="%d" index="2">27</arg>. <arg fmt="%s" index="3">and</arg> can not have such operands in this context.
+<msg type="warning" file="Xst" num="790" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq.vhd</arg>&quot; line <arg fmt="%d" index="2">182</arg>: Index value(s) does not match array range, simulation mismatch.
+</msg>
+
+<msg type="warning" file="Xst" num="790" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq.vhd</arg>&quot; line <arg fmt="%d" index="2">183</arg>: Index value(s) does not match array range, simulation mismatch.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">s3</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">EADiv</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">s4</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">EADiv</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">s5</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">EADiv</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">s6</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">EADiv</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">s7</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">EADiv</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">s8</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">EADiv</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1780" delta="new" >Signal &lt;<arg fmt="%s" index="1">estado_dbg</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">minutos_int&lt;7:4&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1780" delta="new" >Signal &lt;<arg fmt="%s" index="1">carga_min</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="3034" delta="new" >In order to maximize performance and save block RAM resources, the small ROM &lt;<arg fmt="%s" index="1">Mrom_selected_dig_4_1_rom0000</arg>&gt; will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>

@@ -19,4 +19,3 @@ Simulator is doing circuit initialization process.
 at 0 ps, Instance /top_cron_basq_tb/uut/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /top_cron_basq_tb/uut/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-# exit 0

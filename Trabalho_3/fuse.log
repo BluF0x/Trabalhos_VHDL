@@ -13,7 +13,7 @@ Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq.vhd" i
 Parsing VHDL file "/home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 98552 KB
+Fuse Memory Usage: 98556 KB
 Fuse CPU Usage: 760 ms
 Compiling package standard
 Compiling package std_logic_1164
@@ -35,5 +35,5 @@ Waiting for 1 sub-compilation(s) to finish...
 Compiled 24 VHDL Units
 Built simulation executable /home/ise/VHDL/Trabalhos_VHDL/Trabalho_3/top_cron_basq_tb_isim_beh.exe
 Fuse Memory Usage: 541540 KB
-Fuse CPU Usage: 1320 ms
-GCC CPU Usage: 1360 ms
+Fuse CPU Usage: 1340 ms
+GCC CPU Usage: 1320 ms
